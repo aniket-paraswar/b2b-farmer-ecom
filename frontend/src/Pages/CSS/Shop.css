@@ -1,0 +1,89 @@
+.shop-container {
+    padding: 20px;
+    text-align: center; /* Centering all text inside .shop-container */
+}
+
+.shop-container h1 {
+    margin: 0; 
+    padding-bottom: 20px;
+}
+
+/* Add this style if you want to center just the h1, not the entire container */
+.shop-container h1 {
+    display: inline-block; /* Use inline-block to center the text */
+}
+
+/* Other styles remain the same */
+.category-section {
+    margin-bottom: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* Responsive margins for smaller screens */
+@media (max-width: 1200px) {
+    .category-section {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .category-section {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+/* Centering content for very small screens */
+@media (max-width: 480px) {
+    .category-section {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.category-banner {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.category-banner img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-slideshow {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+    gap: 15px;
+    white-space: nowrap; /* Prevent line breaks inside the flexbox container */
+}
+
+.product-slideshow::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+
+.item {
+    display: inline-block;
+    min-width: 200px;
+    flex-shrink: 0;
+}
+
+/* Adjusting product size for smaller screens */
+@media (max-width: 768px) {
+    .item {
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        min-width: 120px;
+    }
+}

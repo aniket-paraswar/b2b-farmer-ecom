@@ -1,0 +1,153 @@
+/* Shop Category Background */
+.shop-category {
+    background-color: #e9ecef; /* Slightly darker light grey background */
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* Modern Banner Style */
+.shopcategory-banner {
+    display: block;
+    margin: 30px auto;
+    width: 90%;
+    height: 200px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6a5acd 0%, #8a2be2 100%); /* Modern gradient */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Header and Sorting */
+.shopcategory-indexSort {
+    display: flex;
+    margin: 0px 170px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopcategory-sort {
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    background-color: #007bff; /* Match with Load More button */
+    color: #fff; /* White text for better contrast */
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    gap: 10px;
+}
+
+.shopcategory-sort:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.shopcategory-sort select {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none; /* Remove border for cleaner look */
+    outline: none;
+    background-color: #0056b3; /* Set background color to match sort button */
+    color: #fff; /* White text for better contrast */
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 8px; /* Slightly rounded corners for the select box */
+}
+
+.shopcategory-sort img {
+    width: 16px;
+    margin-left: 8px;
+}
+
+.shopcategory-indexSort p {
+    font-size: 18px;
+    color: #4b5563;
+}
+
+.shopcategory-indexSort p span {
+    font-weight: 700;
+    color: #1f2937;
+}
+
+/* Product Grid */
+.shopcategory-products {
+    margin: 40px 170px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+/* Load More Button */
+.shopcategory-loadmore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px auto;
+    width: 240px;
+    height: 60px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); /* Blue gradient */
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.shopcategory-loadmore:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+    transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1280px) {
+    .shopcategory-banner {
+        margin: 20px auto;
+        width: 90%;
+    }
+
+    .shopcategory-indexSort {
+        width: 90%;
+        margin: auto;
+    }
+
+    .shopcategory-sort {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .shopcategory-products {
+        width: 90%;
+        margin: 20px auto;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    .shopcategory-banner {
+        width: 95%;
+    }
+
+    .shopcategory-products {
+        width: 95%;
+    }
+
+    .shopcategory-loadmore {
+        width: 180px;
+        height: 50px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+    .shopcategory-products {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .shopcategory-loadmore {
+        width: 140px;
+        height: 45px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,112 @@
+/* CSS for LoginSignup Component */
+
+.loginSignup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    background-color: #f5f5f5; /* Light background color */
+    padding: 0 1rem; /* Padding for small screens */
+  }
+  
+  .loginSignup-container {
+    background: #fff; /* White background for the form */
+    padding: 2rem;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 400px; /* Max width for the form */
+    width: 100%; /* Full width on smaller screens */
+  }
+  
+  .loginSignup h1 {
+    margin-bottom: 1.5rem; /* Spacing below the title */
+    text-align: center; /* Center the title */
+    font-family: 'Poppins', sans-serif; /* Use the Poppins font */
+    color: #333; /* Dark color for text */
+  }
+  
+  .loginSignup-fields {
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically */
+  }
+  
+  .loginSignup-fields input {
+    padding: 0.8rem; /* Padding for inputs */
+    margin-bottom: 1rem; /* Space between inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1rem; /* Font size for inputs */
+  }
+  
+  .loginSignup-fields input:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove outline */
+  }
+  
+  .loginSignup button {
+    background-color: #007bff; /* Primary button color */
+    color: white; /* Text color for button */
+    border: none; /* Remove border */
+    padding: 0.8rem; /* Padding for button */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1rem; /* Font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .loginSignup button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  .loginSignup p {
+    text-align: center; /* Center the text */
+    margin: 1rem 0; /* Vertical margin */
+    color: #555; /* Grey color for text */
+  }
+  
+  .loginSignup-login span {
+    color: #007bff; /* Link color */
+    cursor: pointer; /* Pointer cursor for links */
+    text-decoration: underline; /* Underline links */
+  }
+  
+  .loginSignup-agree {
+    display: flex;
+    align-items: center; /* Center align checkbox and text */
+    justify-content: center; /* Center the whole agreement section */
+    margin-top: 1rem; /* Space above the agreement section */
+  }
+  
+  .loginSignup-agree input {
+    margin-right: 0.5rem; /* Space between checkbox and text */
+  }
+  
+  .loginSignup-agree p {
+    margin: 0; /* Remove margin */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    color: #777; /* Light grey for agreement text */
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 480px) {
+    .loginSignup-container {
+      padding: 1.5rem; /* Reduce padding on smaller screens */
+    }
+  
+    .loginSignup h1 {
+      font-size: 1.5rem; /* Slightly smaller font size */
+    }
+  
+    .loginSignup-fields input {
+      font-size: 0.9rem; /* Smaller input font size */
+    }
+  
+    .loginSignup button {
+      font-size: 0.9rem; /* Smaller button font size */
+    }
+  
+    .loginSignup-agree p {
+      font-size: 0.8rem; /* Smaller agreement text size */
+    }
+  }
+  

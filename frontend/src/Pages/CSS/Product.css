@@ -1,0 +1,120 @@
+/* Container for product details and farmer details */
+.product-details {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Left side: Product details */
+  .product-details-left {
+    width: 60%;
+  }
+  
+  /* Right side: Farmer details */
+  .product-details-right {
+    width: 35%;
+    text-align: left;
+    border-left: 1px solid #ddd;
+    padding-left: 20px;
+  }
+  
+  /* Styling the product image */
+  .product-details-image {
+    width: 300px;  /* Fixed width */
+    height: 270px; /* Fixed height */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 8px;
+    margin-bottom: 5px;
+  }
+  
+  /* Product name styling */
+  .product-details-name {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* General styling for product details */
+  .product-details p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Label styling for each field */
+  .product-details strong {
+    color: #333;
+  }
+  
+  /* Farmer details section */
+  .product-farmer-details {
+    margin-bottom: 20px;
+  }
+  
+  .product-farmer-details h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .product-farmer-details p {
+    font-size: 1.1em;
+    color: #555;
+  }
+  
+  /* Styling for quantity and add-to-cart buttons */
+  .quantity-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .quantity-section input {
+    width: 50px;
+    text-align: center;
+    padding: 5px;
+    font-size: 1.1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .add-to-cart-btn {
+    background-color: #27ae60;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: #219150;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .product-details {
+      flex-direction: column;
+    }
+  
+    .product-details-left, .product-details-right {
+      width: 100%;
+      border: none;
+      padding: 0;
+    }
+  
+    .quantity-section {
+      justify-content: center;
+    }
+  }
+  

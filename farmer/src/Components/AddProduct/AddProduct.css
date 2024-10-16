@@ -1,0 +1,161 @@
+.addproduct {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 800px;
+    padding: 30px 50px;
+    margin: 20px auto; /* Center the form */
+    border-radius: 10px; /* Increased border-radius for a smoother look */
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.addproduct:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
+}
+
+.addproduct-itemfield {
+    width: 100%;
+    color: #5c5c5c;
+    font-size: 16px;
+    margin-bottom: 20px; /* Add space between fields */
+}
+
+.addproduct-itemfield p {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.addproduct-itemfield input,
+.addproduct-itemfield select,
+.addproduct-itemfield textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    padding: 12px 15px; /* Better padding */
+    border-radius: 8px; /* Smooth rounded edges */
+    border: 1px solid #d3d3d3; /* Softer border color */
+    outline: none;
+    color: #4a4a4a;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease;
+}
+
+.addproduct-itemfield input:focus,
+.addproduct-itemfield select:focus,
+.addproduct-itemfield textarea:focus {
+    border-color: #6079ff; /* Change border color on focus */
+    background-color: #fff; /* White background on focus */
+}
+
+.addproduct-itemfield textarea {
+    height: 100px; /* Adjust height for textarea */
+    resize: none; /* Prevent resizing */
+}
+
+.addproduct-price {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.add-product-selector {
+    padding: 12px 10px;
+    height: 50px;
+    font-size: 14px;
+    color: #4a4a4a;
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease;
+}
+
+.add-product-selector:focus {
+    border-color: #6079ff;
+    background-color: #fff;
+}
+
+.addproduct-thumbnail-img {
+    height: 120px;
+    width: 120px;
+    border-radius: 10px;
+    object-fit: contain;
+    margin: 10px 0;
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.addproduct-btn {
+    margin-top: 30px;
+    width: 180px;
+    height: 50px;
+    border-radius: 8px;
+    background: #6079ff;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle button shadow */
+}
+
+.addproduct-btn:hover {
+    background: #4f66e0;
+}
+
+.addproduct-btn:disabled {
+    background: #b3b3ff;
+    cursor: not-allowed; /* Show disabled state */
+}
+
+.error-message {
+    color: #ff4141;
+    margin-top: 10px;
+}
+
+.success-message {
+    color: #28a745;
+    margin-top: 10px;
+}
+
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.spinner {
+    border: 6px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 6px solid #6079ff;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 800px) {
+    .addproduct {
+        width: auto;
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .addproduct-btn {
+        width: 100%;
+    }
+}

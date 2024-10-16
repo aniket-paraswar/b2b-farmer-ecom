@@ -1,0 +1,138 @@
+/* CartItems.css */
+
+/* Base styles for cart items */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white; /* Text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px; /* Loading message size */
+    z-index: 10; /* Ensure it covers the items */
+}
+
+/* Error message styles */
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+.cartitems {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+}
+
+.cartitem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between elements */
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    width: 100%; /* Ensure the item takes full width */
+}
+
+/* Styles for image */
+.cartitem-image {
+    width: 80px; /* Adjust as needed */
+    height: 80px; /* Adjust as needed */
+    object-fit: cover;
+    margin-right: 15px; /* Space between image and text */
+}
+
+/* Details section with flex */
+.cartitem-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space evenly between items */
+    flex: 1; /* Allow this to take available space */
+}
+
+/* Product name styles */
+.cartitem-name {
+    flex: 2; /* Take more space for the name */
+    font-size: 18px;
+    margin: 0 10px; /* Space around name */
+}
+
+/* Price styles */
+.cartitem-price {
+    flex: 1; /* Take less space for price */
+    font-size: 18px;
+    color: #333;
+    margin: 0 10px; /* Space around price */
+}
+
+/* Quantity section */
+.quantity {
+    flex: 1; /* Take less space for quantity */
+    display: flex;
+    align-items: center;
+    margin: 0 10px; /* Space around quantity */
+}
+
+.quantity-input {
+    width: 50px; /* Input width */
+    margin-left: 10px; /* Space between label and input */
+}
+
+/* Remove button */
+.cartitem-remove {
+    flex: 0; /* Take fixed space for the remove button */
+}
+
+.remove-icon {
+    width: 20px; /* Adjust as needed */
+    height: 20px; /* Adjust as needed */
+    cursor: pointer;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .cartitem {
+        flex-direction: row; /* Keep in a row but smaller */
+    }
+
+    .cartitem-image {
+        width: 60px; /* Adjust as needed */
+        height: 60px; /* Adjust as needed */
+    }
+
+    .cartitem-name {
+        font-size: 16px; /* Adjust as needed */
+    }
+
+    .cartitem-price {
+        font-size: 16px; /* Adjust as needed */
+    }
+
+    .remove-icon {
+        width: 18px; /* Adjust as needed */
+        height: 18px; /* Adjust as needed */
+    }
+}
+
+@media (max-width: 480px) {
+    .cartitem-image {
+        width: 50px; /* Adjust as needed */
+        height: 50px; /* Adjust as needed */
+    }
+
+    .cartitem-name {
+        font-size: 14px; /* Adjust as needed */
+    }
+
+    .cartitem-price {
+        font-size: 14px; /* Adjust as needed */
+    }
+
+    .remove-icon {
+        width: 16px; /* Adjust as needed */
+        height: 16px; /* Adjust as needed */
+    }
+}

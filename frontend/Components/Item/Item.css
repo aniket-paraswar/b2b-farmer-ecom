@@ -1,0 +1,149 @@
+.item {
+    background-color: #f9fafb; /* Light background for contrast */
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Hover effect for item */
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    background-color: #e0f2fe; /* Light blue background on hover */
+}
+
+/* Product Image */
+.item img {
+    width: 100%;
+    height: 180px; /* Fixed height for consistent image size */
+    object-fit: cover; /* Ensures the image maintains aspect ratio and covers the area */
+    border-radius: 12px;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+.item:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Product Name */
+.item-name {
+    margin: 8px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #374151; /* Darker gray for text */
+    text-align: center;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.item:hover .item-name {
+    color: #1f2937; /* Darker text on hover */
+}
+
+/* Product Price */
+.item-price {
+    font-size: 20px;
+    font-weight: 600;
+    color: #10b981; /* Green for price */
+    margin: 10px 0;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.item:hover .item-price {
+    color: #059669; /* Slightly darker green on hover */
+}
+
+/* Farmer Details (State and District) */
+.item-farmer-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 12px;
+    font-size: 14px;
+    color: #6b7280; /* Muted gray for farmer details */
+}
+
+.item-state, .item-district {
+    font-weight: 500;
+}
+
+/* Hover effect for farmer details */
+.item:hover .item-farmer-details {
+    color: #374151; /* Slightly darker color on hover */
+}
+
+/* Responsive Design */
+@media (min-width: 1280px) {
+    .item {
+        width: 260px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .item {
+        width: 220px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .item {
+        width: 200px;
+        padding: 12px;
+    }
+
+    .item-name {
+        font-size: 16px;
+    }
+
+    .item-price {
+        font-size: 18px;
+    }
+
+    .item-farmer-details {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .item {
+        width: 170px;
+        padding: 10px;
+    }
+
+    .item-name {
+        font-size: 15px;
+    }
+
+    .item-price {
+        font-size: 16px;
+    }
+
+    .item-farmer-details {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .item {
+        width: 140px;
+        padding: 8px;
+    }
+
+    .item-name {
+        font-size: 14px;
+    }
+
+    .item-price {
+        font-size: 14px;
+    }
+
+    .item-farmer-details {
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,26 @@
+/* Cart.css */
+
+.cart {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cart-header h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.cart-header .total-price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Add additional styles as needed */
