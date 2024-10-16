@@ -16,7 +16,7 @@ export const LoginSignup = () => {
   const login = async () => {
     console.log("Login Function Executed", formData);
     let responseData;
-    await fetch('http://localhost:9813/signin', {
+    await fetch('https://fbackend-zhrj.onrender.com/signin', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -38,7 +38,7 @@ export const LoginSignup = () => {
   const signup = async () => {
     console.log("Sign Up Function Executed", formData);
     let responseData;
-    await fetch('http://localhost:9813/signup', {
+    await fetch('https://fbackend-zhrj.onrender.com/signup', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

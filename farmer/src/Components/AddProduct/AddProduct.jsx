@@ -42,7 +42,7 @@ export const AddProduct = () => {
         formData.append('image', image);  // Image file to be uploaded
 
         try {
-            const response = await fetch('http://localhost:9813/farmer/product', {
+            const response = await fetch('https://fbackend-zhrj.onrender.com/farmer/product', {
                 method: 'POST',
                 headers: {
                     'x-access-token': localStorage.getItem('x-access-token')   // Replace with actual auth token

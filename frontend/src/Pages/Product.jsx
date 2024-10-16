@@ -12,7 +12,7 @@ export const Product = () => {
     // Fetch product details by ID
     const fetchProductDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:9813/product/${id}`);
+        const response = await fetch(`https://fbackend-zhrj.onrender.com/product/${id}`);
         const data = await response.json();
         setProduct(data); // Assuming the API returns product details
         setLoading(false);
@@ -28,7 +28,7 @@ export const Product = () => {
 
       if (token) {
         try {
-          const response = await fetch('http://localhost:9813/buyers/cart', {
+          const response = await fetch('https://fbackend-zhrj.onrender.com/buyers/cart', {
             headers: {
               'x-access-token': token, // Include token in headers
             },
@@ -61,7 +61,7 @@ export const Product = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:9813/buyers/cart/add', {
+      const response = await fetch('https://fbackend-zhrj.onrender.com/buyers/cart/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

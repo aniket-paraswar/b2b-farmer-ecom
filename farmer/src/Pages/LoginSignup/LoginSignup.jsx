@@ -43,7 +43,7 @@ export const LoginSignup = () => {
     const login = async () => {
         console.log("Login Function Executed", formData);
         let responseData;
-        await fetch('http://localhost:9813/farmers/signin', {
+        await fetch('https://fbackend-zhrj.onrender.com/farmers/signin', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ export const LoginSignup = () => {
     const signup = async () => {
         console.log("Sign Up Function Executed", formData);
         let responseData;
-        await fetch('http://localhost:9813/farmers/signup', {
+        await fetch('https://fbackend-zhrj.onrender.com/farmers/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

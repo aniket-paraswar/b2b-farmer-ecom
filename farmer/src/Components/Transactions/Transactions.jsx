@@ -8,7 +8,7 @@ export const Transactions = () => {
 
     const fetchTransactions = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:9813/farmer/transactions', {
+            const response = await fetch('https://fbackend-zhrj.onrender.com/farmer/transactions', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

@@ -14,7 +14,7 @@ export const Shop = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:9813/products', {
+            const response = await fetch('https://fbackend-zhrj.onrender.com/products', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

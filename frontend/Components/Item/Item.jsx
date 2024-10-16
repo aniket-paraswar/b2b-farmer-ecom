@@ -7,7 +7,7 @@ export const Item = (props) => {
     <div className='item'>
       {/* Link to the product's page */}
       <Link to={`/product/${props.id}`}>
-        <img onClick={() => window.scrollTo(0, 0)} src={`http://localhost:9813${props.image}`} alt={props.name} />
+        <img onClick={() => window.scrollTo(0, 0)} src={`https://fbackend-zhrj.onrender.com${props.image}`} alt={props.name} />
       </Link>
 
       {/* Product name */}

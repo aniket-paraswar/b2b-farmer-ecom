@@ -9,7 +9,7 @@ export const ListProduct = () => {
     // Fetch all products for the authenticated farmer
     const fetchInfo = async () => {
         try {
-            const res = await fetch('http://localhost:9813/farmer/products', {
+            const res = await fetch('https://fbackend-zhrj.onrender.com/farmer/products', {
                 headers: {
                     'x-access-token': localStorage.getItem('x-access-token')  // Replace with actual auth token
                 }
@@ -37,7 +37,7 @@ export const ListProduct = () => {
     const removeProduct = async (productId) => {
         if (window.confirm("Are you sure you want to remove this product?")) {
             try {
-                const response = await fetch('http://localhost:9813/farmer/product/remove', {
+                const response = await fetch('https://fbackend-zhrj.onrender.com/farmer/product/remove', {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ export const ListProduct = () => {
                 ) : allProducts.length > 0 ? (
                     allProducts.map((product) => (
                         <div key={product._id} className="listproduct-format-main listproduct-format">
-                            <img src={`http://localhost:9813${product.image}`} alt={product.name} className='listproduct-product-icon' />
+                            <img src={`https://fbackend-zhrj.onrender.com${product.image}`} alt={product.name} className='listproduct-product-icon' />
                             <p>{product.name}</p>
                             <p>₹{product.price}</p>
                             <p>{product.type}</p>

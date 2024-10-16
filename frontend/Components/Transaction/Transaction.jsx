@@ -9,7 +9,7 @@ export const Transaction = () => {
     useEffect(() => {
         const fetchTransactions = async () => {
             try {
-                const response = await fetch('http://localhost:9813/buyers/transactions', {
+                const response = await fetch('https://fbackend-zhrj.onrender.com/buyers/transactions', {
                     method: 'POST',
                     headers: {
                         'x-access-token': localStorage.getItem('x-access-token'), // Include token in the request header

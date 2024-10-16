@@ -10,7 +10,7 @@ const Cart = () => {
     useEffect(() => {
         const fetchCartItems = async () => {
             try {
-                const response = await fetch('http://localhost:9813/buyers/cart', {
+                const response = await fetch('https://fbackend-zhrj.onrender.com/buyers/cart', {
                     method: 'GET',
                     headers: {
                         'x-access-token': localStorage.getItem('x-access-token'),
@@ -40,7 +40,7 @@ const Cart = () => {
 
     const handleRemoveItem = async (productId) => {
         try {
-            const response = await fetch(`http://localhost:9813/buyers/cart/remove`, {
+            const response = await fetch(`https://fbackend-zhrj.onrender.com/buyers/cart/remove`, {
                 method: 'DELETE',
                 headers: {
                     'x-access-token': localStorage.getItem('x-access-token'),
@@ -82,7 +82,7 @@ const Cart = () => {
                 quantity: item.quantity || 1,  // Ensure quantity is sent
             }));
 
-            const response = await fetch('http://localhost:9813/buyers/transaction', {
+            const response = await fetch('https://fbackend-zhrj.onrender.com/buyers/transaction', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

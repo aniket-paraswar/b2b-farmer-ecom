@@ -18,7 +18,7 @@ const CartItems = ({ item, onRemove, onQuantityChange }) => {
   return (
     <div className="cartitems">
       <div className="cartitem">
-        <img src={`http://localhost:9813${item.image}`} alt={item.name} className="cartitem-image" />
+        <img src={`https://fbackend-zhrj.onrender.com${item.image}`} alt={item.name} className="cartitem-image" />
         <div className="cartitem-details">
           <h3 className="cartitem-name">{item.name}</h3>
           <div className="cartitem-price">₹{item.price}</div>

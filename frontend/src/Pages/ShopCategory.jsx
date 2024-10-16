@@ -15,7 +15,7 @@ export const ShopCategory = (props) => {
     // Fetching all products with farmer details from the API
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:9813/products'); // Replace with the actual API endpoint
+        const response = await fetch('https://fbackend-zhrj.onrender.com/products'); // Replace with the actual API endpoint
         const data = await response.json();
         setProducts(data);  // Assuming the data is an array of products
         setFilteredProducts(data); // Initially, show all products
