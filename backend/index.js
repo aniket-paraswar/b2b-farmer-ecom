@@ -60,7 +60,7 @@ app.get('/ping', (req, res) => {
   }
   
   // Set up interval to call itself every 14 minutes (840000 ms)
-setInterval(callSelfRoutes, 840000);
+setInterval(callSelfRoutes, 340000);
 // --------- Buyer Sign Up ---------
 app.post('/buyers/signup', async (req, res) => {
     try {
