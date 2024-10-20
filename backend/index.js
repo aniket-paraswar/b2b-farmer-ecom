@@ -7,7 +7,7 @@ const { Product, Farmer, Buyer, Transaction } = require('./db');
 require('dotenv').config();
 const path = require('path');
 const cors = require('cors');
-
+const axios = require('axios');
 
 const app = express();
 app.use(express.json());
@@ -28,7 +28,39 @@ const upload = multer({ storage: storage });
 // Serve the 'uploads' directory as static
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-
+// Example route
+app.get('/ping', (req, res) => {
+    res.send('Server is alive and well');
+  });
+  
+  // Another route, for example purposes
+  app.get('/status', (req, res) => {
+    res.json({ status: 'Server is running fine' });
+  });
+  
+  // Function to make self-calls
+  function callSelfRoutes() {
+    // Call your own /ping route
+    axios.get(`${backendUrl}/ping`)
+      .then(response => {
+        console.log('Ping successful:', response.data);
+      })
+      .catch(error => {
+        console.error('Error during /ping:', error.message);
+      });
+  
+    // Call your own /status route
+    axios.get(`${backendUrl}/status`)
+      .then(response => {
+        console.log('Status check:', response.data);
+      })
+      .catch(error => {
+        console.error('Error during /status:', error.message);
+      });
+  }
+  
+  // Set up interval to call itself every 14 minutes (840000 ms)
+setInterval(callSelfRoutes, 840000);
 // --------- Buyer Sign Up ---------
 app.post('/buyers/signup', async (req, res) => {
     try {
