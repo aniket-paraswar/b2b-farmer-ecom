@@ -30,7 +30,6 @@ const upload = multer({ storage: storage });
 // Serve the 'uploads' directory as static
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Example route
 app.get('/ping', (req, res) => {
     res.send('Server is alive and well');
   });
