@@ -13,6 +13,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+const backendUrl = "https://fbackend-zhrj.onrender.com"
+
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
