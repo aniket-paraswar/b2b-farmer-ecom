@@ -108,7 +108,7 @@ app.post('/buyers/gsignin', async (req, res) => {
 
         // If buyer doesn't exist, create a new one
         if (!buyer) {
-            const newBuyer = new Buyer({ name, mail, phone: mail });  // Use mail as phone if that's intended
+            const newBuyer = new Buyer({ name, mail, mail });  // Use mail as phone if that's intended
             await newBuyer.save();  // Save the new buyer to the database
             buyer = newBuyer;  // Assign the new buyer to the 'buyer' variable
         }
