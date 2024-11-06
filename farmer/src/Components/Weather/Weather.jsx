@@ -5,7 +5,7 @@ export const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [city, setCity] = useState('Mumbai');
+  const [city, setCity] = useState('Landon');
 
   const fetchWeatherData = async () => {
     setLoading(true);
@@ -24,9 +24,15 @@ export const Weather = () => {
       const response = await fetch(url, options);
       if (!response.ok) throw new Error('City not found');
       const result = await response.json();
+      
+      if (!result.weather || result.weather.length === 0) {
+        throw new Error('Weather data unavailable');
+      }
+      
       setWeatherData(result);
     } catch (error) {
       setError(error.message);
+      setWeatherData(null);
     } finally {
       setLoading(false);
     }
@@ -45,7 +51,6 @@ export const Weather = () => {
     fetchWeatherData();
   };
 
-  // Fahrenheit to Celsius conversion function
   const toCelsius = (fahrenheit) => ((fahrenheit - 32) * 5) / 9;
 
   return (
@@ -110,5 +115,4 @@ export const Weather = () => {
     </div>
   );
 };
-
 
