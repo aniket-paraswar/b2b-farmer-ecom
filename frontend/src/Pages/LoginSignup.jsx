@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './CSS/LoginSignup.css';
+import { GoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from "jwt-decode";
 
 export const LoginSignup = () => {
   const [state, setState] = useState("Sign Up");
@@ -57,6 +59,40 @@ export const LoginSignup = () => {
     }
   };
 
+  // Handle Google Login
+  const handleGoogleLogin = async (response) => {
+    try {
+      const googleToken = response.credential;
+      
+      // Decode the Google token to get the email
+      const decodedToken = jwtDecode(googleToken);
+      const email = decodedToken.email;
+
+      // Send only the email to the backend for Google Sign-In
+      let responseData;
+      await fetch('https://fbackend-zhrj.onrender.com/buyers/gsignin', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ mail: email }),
+      })
+        .then((response) => response.json())
+        .then((data) => (responseData = data));
+
+      if (responseData.result) {
+        localStorage.setItem('x-access-token', responseData.token); // Save the token here
+        window.location.replace("/"); // Redirect to home
+      } else {
+        alert(responseData.error);
+      }
+    } catch (error) {
+      console.log('Google Login Error: ', error);
+      alert('Google Login Failed');
+    }
+  };
+
   return (
     <div className='loginSignup'>
       <div className="loginSignup-container">
@@ -110,6 +146,14 @@ export const LoginSignup = () => {
           <input type="checkbox" name="" id="" />
           <p>By continuing, I agree to the terms of use & privacy policy.</p>
         </div>
+
+        {/* Google Sign-In */}
+        <GoogleLogin
+          onSuccess={handleGoogleLogin}
+          onError={() => {
+            console.log('Google Login Failed');
+          }}
+        />
       </div>
     </div>
   );

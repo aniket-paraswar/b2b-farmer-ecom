@@ -97,6 +97,29 @@ app.post('/buyers/signin', async (req, res) => {
     }
 });
 
+
+app.post('/buyers/gsignin', async (req, res) => {
+    try {
+        const {mail} = req.body;
+        const name = "G Sign In"
+        const buyer = await Buyer.findOne({ mail });
+
+        if (!buyer) {
+            const newBuyer = new Buyer({ name , mail, mail });
+        }
+
+        buyer = await Buyer.findOne({ mail });
+
+        const token = jwt.sign({ id: buyer._id, role: 'buyer' }, process.env.JWT_SECRET, {
+            expiresIn: '1h',
+        });
+
+        res.json({ result: true, token });
+    } catch (error) {
+        res.status(500).json({ result: false, error: error.message });
+    }
+});
+
 // --------- Farmer Sign Up ---------
 app.post('/farmers/signup', async (req, res) => {
     try {
@@ -131,6 +154,7 @@ app.post('/farmers/signin', async (req, res) => {
         res.status(500).json({ result: false, error: error.message });
     }
 });
+
 
 const verifyFarmerToken = (req, res, next) => {
     // Get the token from the custom header
