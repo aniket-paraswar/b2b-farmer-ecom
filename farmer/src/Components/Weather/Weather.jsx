@@ -5,7 +5,7 @@ export const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [city, setCity] = useState('Landon');
+  const [city, setCity] = useState('Mumbai');
 
   const fetchWeatherData = async () => {
     setLoading(true);
