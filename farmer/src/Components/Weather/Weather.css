@@ -1,0 +1,48 @@
+/* Weather.css */
+
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+  }
+  
+  .weather-heading {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .location-input {
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    outline: none;
+  }
+  
+  .location-input:focus {
+    border-color: #4CAF50;
+  }
+  
+  .weatherwidget-io {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .weatherwidget-io:hover {
+    background-color: #45a049;
+  }
+  
