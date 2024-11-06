@@ -100,25 +100,31 @@ app.post('/buyers/signin', async (req, res) => {
 
 app.post('/buyers/gsignin', async (req, res) => {
     try {
-        const {mail} = req.body;
-        const name = "G Sign In"
-        const buyer = await Buyer.findOne({ mail });
+        const { mail } = req.body;
+        const name = "G Sign In";
+        
+        // Check if the buyer already exists
+        let buyer = await Buyer.findOne({ mail });
 
+        // If buyer doesn't exist, create a new one
         if (!buyer) {
-            const newBuyer = new Buyer({ name , mail, mail });
+            const newBuyer = new Buyer({ name, mail, phone: mail });  // Use mail as phone if that's intended
+            await newBuyer.save();  // Save the new buyer to the database
+            buyer = newBuyer;  // Assign the new buyer to the 'buyer' variable
         }
 
-        buyer = await Buyer.findOne({ mail });
-
+        // Create the JWT token
         const token = jwt.sign({ id: buyer._id, role: 'buyer' }, process.env.JWT_SECRET, {
             expiresIn: '1h',
         });
 
+        // Return the response with the token
         res.json({ result: true, token });
     } catch (error) {
         res.status(500).json({ result: false, error: error.message });
     }
 });
+
 
 // --------- Farmer Sign Up ---------
 app.post('/farmers/signup', async (req, res) => {
