@@ -105,7 +105,7 @@ app.post('/buyers/gsignin', async (req, res) => {
         const phone = mail;
         const password = mail;
         // Check if the buyer already exists
-        let buyer = await Buyer.findOne({ mail });
+        let buyer = await Buyer.findOne({ phone });
 
         // If buyer doesn't exist, create a new one
         if (!buyer) {
