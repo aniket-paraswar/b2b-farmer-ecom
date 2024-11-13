@@ -15,14 +15,18 @@ export const Weather = () => {
     const options = {
       method: 'GET',
       headers: {
-        'x-rapidapi-key': 'f248db27e4mshbd12a15aca5cc75p1d8462jsndd694fc597f6',
+        'x-rapidapi-key': 'a5ec288651msh447d2f01f41a0f2p140acfjsndd39f69dcb75',
         'x-rapidapi-host': 'open-weather13.p.rapidapi.com'
       }
     };
 
     try {
       const response = await fetch(url, options);
-      if (!response.ok) throw new Error('City not found');
+      if (!response.ok){
+        throw new Error('City not found');
+        
+      } 
+
       const result = await response.json();
       
       if (!result.weather || result.weather.length === 0) {
@@ -55,7 +59,7 @@ export const Weather = () => {
 
   return (
     <div className="container mt-5">
-      <h2 className="text-center mb-4">Weather App</h2>
+      <h2 className="text-center mb-4">Weather</h2>
       <form onSubmit={handleFormSubmit} className="text-center mb-3">
         <input
           type="text"

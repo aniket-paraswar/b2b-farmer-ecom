@@ -96,7 +96,7 @@ export const Product = () => {
     <div className="product-details">
       {/* Left side: Product Details */}
       <div className="product-details-left">
-        <img src={`http://localhost:9813${product.image}`} alt={product.name} className="product-details-image" />
+        <img src={`https://fbackend-zhrj.onrender.com${product.image}`} alt={product.name} className="product-details-image" />
         <h1 className="product-details-name">{product.name}</h1>
         <p className="product-details-type"><strong>Type:</strong> {product.type}</p>
         <p className="product-details-expiry"><strong>Expiry Date:</strong> {new Date(product.expiryDate).toLocaleDateString()}</p>

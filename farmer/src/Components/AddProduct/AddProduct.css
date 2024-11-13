@@ -3,28 +3,31 @@
     width: 100%;
     max-width: 800px;
     padding: 30px 50px;
-    margin: 20px auto; /* Center the form */
-    border-radius: 10px; /* Increased border-radius for a smoother look */
-    background: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-    transition: box-shadow 0.3s ease-in-out;
+    margin: 20px auto;
+    border-radius: 12px; /* Smooth curve */
+    background: linear-gradient(to bottom right, #e8f0fe, #c5d9ff); /* Gentle blue gradient */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12); /* Softer shadow */
+    border: 1px solid #d3e0ff; /* Light border */
+    transition: transform 0.3s, box-shadow 0.3s ease-in-out;
 }
 
 .addproduct:hover {
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px); /* Slight lift effect */
 }
 
 .addproduct-itemfield {
     width: 100%;
-    color: #5c5c5c;
+    color: #444;
     font-size: 16px;
-    margin-bottom: 20px; /* Add space between fields */
+    margin-bottom: 24px; /* Increase spacing */
+    font-family: 'Poppins', sans-serif;
 }
 
 .addproduct-itemfield p {
-    font-weight: 600;
-    margin-bottom: 8px;
-    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* Bolder text */
+    margin-bottom: 6px;
+    color: #333;
 }
 
 .addproduct-itemfield input,
@@ -33,49 +36,46 @@
     box-sizing: border-box;
     width: 100%;
     height: 50px;
-    padding: 12px 15px; /* Better padding */
-    border-radius: 8px; /* Smooth rounded edges */
-    border: 1px solid #d3d3d3; /* Softer border color */
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #d4d7df; /* Softer gray border */
     outline: none;
-    color: #4a4a4a;
+    color: #333;
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    background-color: #f9f9f9;
-    transition: border 0.3s ease;
+    font-size: 15px;
+    background-color: #fdfdfd;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .addproduct-itemfield input:focus,
 .addproduct-itemfield select:focus,
 .addproduct-itemfield textarea:focus {
-    border-color: #6079ff; /* Change border color on focus */
-    background-color: #fff; /* White background on focus */
-}
-
-.addproduct-itemfield textarea {
-    height: 100px; /* Adjust height for textarea */
-    resize: none; /* Prevent resizing */
+    border-color: #4a90e2; /* Calmer blue for focus */
+    box-shadow: 0 0 6px rgba(74, 144, 226, 0.4); /* Focus glow */
+    background-color: #ffffff;
 }
 
 .addproduct-price {
     display: flex;
     gap: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .add-product-selector {
-    padding: 12px 10px;
+    padding: 12px 15px;
     height: 50px;
     font-size: 14px;
-    color: #4a4a4a;
+    color: #333;
     border: 1px solid #d3d3d3;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    transition: border 0.3s ease;
+    border-radius: 10px;
+    background-color: #f9fafc;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .add-product-selector:focus {
-    border-color: #6079ff;
-    background-color: #fff;
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+    background-color: #ffffff;
 }
 
 .addproduct-thumbnail-img {
@@ -84,41 +84,50 @@
     border-radius: 10px;
     object-fit: contain;
     margin: 10px 0;
-    cursor: pointer; /* Pointer cursor on hover */
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.addproduct-thumbnail-img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
 }
 
 .addproduct-btn {
     margin-top: 30px;
-    width: 180px;
-    height: 50px;
-    border-radius: 8px;
-    background: #6079ff;
+    width: 200px;
+    height: 55px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #6faaff, #5b709a); /* Gradient background */
     cursor: pointer;
     color: white;
     font-size: 18px;
     font-weight: 600;
     border: none;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle button shadow */
+    transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .addproduct-btn:hover {
-    background: #4f66e0;
+    background: linear-gradient(to right, #567fde, #305cd3);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
 }
 
 .addproduct-btn:disabled {
     background: #b3b3ff;
-    cursor: not-allowed; /* Show disabled state */
+    cursor: not-allowed;
 }
 
 .error-message {
-    color: #ff4141;
+    color: #e63946; /* Bright error color */
     margin-top: 10px;
+    font-weight: bold;
 }
 
 .success-message {
-    color: #28a745;
+    color: #2a9d8f; /* Bright success color */
     margin-top: 10px;
+    font-weight: bold;
 }
 
 .loading-overlay {
@@ -127,7 +136,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,12 +144,12 @@
 }
 
 .spinner {
-    border: 6px solid #f3f3f3;
+    border: 6px solid #e0e0e0;
     border-radius: 50%;
-    border-top: 6px solid #6079ff;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
+    border-top: 6px solid #a5c19f;
+    width: 45px;
+    height: 45px;
+    animation: spin 0.8s linear infinite;
 }
 
 @keyframes spin {
@@ -158,4 +167,21 @@
     .addproduct-btn {
         width: 100%;
     }
+}
+.addproduct {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 800px; /* Maintain original width */
+    padding: 10px 50px; /* Further reduced top and bottom padding for shorter height */
+    margin: 20px auto;
+    border-radius: 12px; /* Smooth curve */
+    background: linear-gradient(to bottom right, #e8f0fe, #c5d9ff); /* Gentle blue gradient */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12); /* Softer shadow */
+    border: 1px solid #d3e0ff; /* Light border */
+    transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+}
+
+.addproduct:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px); /* Slight lift effect */
 }

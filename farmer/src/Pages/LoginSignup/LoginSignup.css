@@ -1,20 +1,24 @@
+/* Full-screen background styling */
+
 .loginSignup {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(135deg, #b4e197 0%, #7bb87b 100%);
+    background: linear-gradient(135deg, #7C8C4F 0%, #4B6F44 100%);; /* Replace this with your desired color */
+    padding-top: 100px;
     padding-top: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Form container styling */
 .loginSignup-container {
     width: 580px;
-    background: #ffffff;
-    padding: 50px 60px;
+    background: #dce0c3;
+    padding: 20px 30px;
     margin: auto;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
+    border-radius: 25px;
     transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -22,6 +26,7 @@
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Heading styling */
 .loginSignup-container h1 {
     margin: 20px 0;
     font-family: 'Poppins', sans-serif;
@@ -31,6 +36,7 @@
     text-align: center;
 }
 
+/* Form field styling */
 .loginSignup-fields {
     display: flex;
     flex-direction: column;
@@ -45,9 +51,9 @@
     padding-left: 20px;
     border: 1px solid #d3d3d3;
     outline: none;
-    color: #3b593b;
+    color: #a2cfa2;
     font-size: 18px;
-    border-radius: 8px;
+    border-radius: 35px;
     font-family: 'Poppins', sans-serif;
     background-color: #f9f9f9;
     transition: border-color 0.3s ease;
@@ -59,6 +65,7 @@
     background-color: #fff;
 }
 
+/* Select dropdown styling */
 .loginSignup-fields select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -68,6 +75,7 @@
     padding-right: 50px;
 }
 
+/* Button styling */
 .loginSignup-container button {
     height: 65px;
     width: 100%;
@@ -92,6 +100,7 @@
     transform: translateY(0);
 }
 
+/* Text under button for login/signup */
 .loginSignup-login {
     margin-top: 20px;
     color: #3b593b;
@@ -106,6 +115,7 @@
     cursor: pointer;
 }
 
+/* Checkbox styling for "Agree to terms" */
 .loginSignup-agree {
     display: flex;
     align-items: center;
@@ -120,6 +130,7 @@
     accent-color: #6079ff;
 }
 
+/* Responsive adjustments */
 @media (max-width: 1280px) {
     .loginSignup-container {
         width: auto;
@@ -158,4 +169,86 @@
     .loginSignup-login {
         font-size: 16px;
     }
+}
+.loginSignup-fields input,
+.loginSignup-fields select {
+    height: 40px; /* Smaller height */
+    padding: 8px 12px; /* Adjust padding for a compact look */
+    font-size: 14px; /* Smaller font size */
+    color: #3b593b;
+    background-color: #f7f7f7; /* Light background for subtle contrast */
+    border: 1px solid #c0c0c0; /* Softer border color */
+    border-radius: 6px; /* Slightly rounded corners */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.loginSignup-fields input:focus,
+.loginSignup-fields select:focus {
+    border-color: #4f66e0; /* Accent color on focus */
+    box-shadow: 0 0 8px rgba(79, 102, 224, 0.2); /* Add a subtle shadow on focus */
+    background-color: #ffffff; /* White background on focus */
+}
+
+.loginSignup-container button {
+    height: 45px;
+    font-size: 16px;
+    margin-top: 15px;
+    border-radius: 6px;
+    background: #ff6b3b;
+    color: white;
+    transition: background 0.3s ease, box-shadow 0.2s ease;
+}
+
+.loginSignup-container button:hover {
+    background: #ff5733;
+    box-shadow: 0 4px 10px rgba(255, 87, 51, 0.3); /* Slight shadow on hover */
+}
+/*
+/* Form field styling */
+.loginSignup-fields input,
+.loginSignup-fields select {
+    height: 45px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.loginSignup-fields input:focus,
+.loginSignup-fields select:focus {
+    border-color: #007bff;
+}
+
+/* Button styling */
+.loginSignup-container button {
+    height: 45px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #447e4e;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.loginSignup-container button:hover 
+{
+    background-color: #5c9556;
+}
+.loginSignup 
+{
+    background-image: url('../../assets/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.loginSignup 
+{
+    background-image: url('../../assets/bg.jpg');
 }
