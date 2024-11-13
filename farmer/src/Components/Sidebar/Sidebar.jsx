@@ -5,6 +5,7 @@ import add_product_icon from '../../assets/Product_Cart.svg';
 import weather from '../../assets/weather.png';
 import list_product_icon from '../../assets/Product_list_icon.svg';
 import trans from '../../assets/trans.png';
+import scrap from '../../assets/scrap.png';
 
 export const Sidebar = () => {
   return (
@@ -34,6 +35,13 @@ export const Sidebar = () => {
         <div className="sidebar-item">
           <img src={weather} alt="Weather" style={{ width: '24px', height: '24px' }} />
           <p>Weather</p>
+        </div>
+      </Link>
+
+      <Link to={'/scrapping'} style={{ textDecoration: 'none' }}>
+        <div className="sidebar-item">
+          <img src={scrap} alt="Scrapping" style={{ width: '24px', height: '24px' }} />
+          <p>Market Prices</p>
         </div>
       </Link>
     </div>
