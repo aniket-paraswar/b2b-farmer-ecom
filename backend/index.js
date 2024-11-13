@@ -8,6 +8,7 @@ require('dotenv').config();
 const path = require('path');
 const cors = require('cors');
 const axios = require('axios');
+const cheerio = require('cheerio');
 
 const app = express();
 app.use(express.json());
@@ -98,6 +99,8 @@ app.post('/buyers/signin', async (req, res) => {
 });
 
 
+
+
 app.post('/buyers/gsignin', async (req, res) => {
     try {
         const { mail } = req.body;
@@ -183,6 +186,33 @@ const verifyFarmerToken = (req, res, next) => {
     });
 };
 
+app.get('/scrape/vegetables', async (req, res) => {
+    const url = 'https://vegetablemarketprice.com/market/maharashtra/today';
+    try {
+        const { data } = await axios.get(url);
+        const $ = cheerio.load(data);
+        const headers = [];
+        $('table th').each((i, elem) => {
+            headers.push($(elem).text().trim());
+        });
+        const rows = [];
+        $('table tr').slice(1).each((i, elem) => {
+            const cells = [];
+            $(elem).find('td').each((j, cell) => {
+                cells.push($(cell).text().trim());
+            });
+            while (cells.length < headers.length) cells.push('');
+            rows.push(cells);
+        });
+        res.json({
+            headers,
+            data: rows
+        });
+    } catch (error) {
+        console.error("Error scraping data:", error.message);
+        return null;
+    }
+});
 
 app.post('/farmer/product', verifyFarmerToken, upload.single('image'), async (req, res) => {
     const { name, type, expiryDate, quantity, price, description } = req.body;
